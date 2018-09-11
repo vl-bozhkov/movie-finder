@@ -1,18 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Header from './components/Header';
+import Movie from './components/Movie';
 import './App.css';
+const API_KEY = `${process.env.REACT_APP_API_KEY}`;
 
 class App extends Component {
+  state = {
+    movies: []
+  };
+  async componentDidMount() {
+    try {
+      const res = await fetch(
+        `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`
+      );
+      const movies = await res.json();
+      this.setState({
+        movies: movies.results
+      });
+      console.log(movies);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
   render() {
+    console.log(API_KEY);
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Vlaimir Bozhkov App</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <Header />
+        {this.state.movies.map(movie => (
+          <Movie key={movie.id} movie={movie.title} />
+        ))}
       </div>
     );
   }
