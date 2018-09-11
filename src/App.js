@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Header from './components/Header';
 import Movie from './components/Movie';
 import './App.css';
-const API_KEY = `${process.env.REACT_APP_API_KEY}`;
+// const API_KEY = `${process.env.REACT_APP_API_KEY}`;
+const API_KEY = 'fa12fc1e59ab1b0c6d4f9bd143e6e73b';
 
 class App extends Component {
   state = {
@@ -25,6 +26,9 @@ class App extends Component {
 
   render() {
     console.log(API_KEY);
+    if (this.state.movies.length <= 0) {
+      return <div>Loading...</div>;
+    }
     return (
       <div>
         <Header />
