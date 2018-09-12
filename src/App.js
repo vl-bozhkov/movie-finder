@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import MoviesList from './components/MoviesList';
 import MovieDetail from './components/MovieDetail';
+import Footer from './components/Footer';
 import './App.css';
 
 const App = () => (
@@ -13,6 +14,7 @@ const App = () => (
         <Route exact path="/" component={MoviesList} />
         <Route path="/:id" component={MovieDetail} />
       </Switch>
+      <Footer />
     </div>
   </BrowserRouter>
 );

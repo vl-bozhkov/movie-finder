@@ -31,10 +31,12 @@ class MoviesList extends Component {
       return <div>Loading...</div>;
     }
     return (
-      <div>
-        {this.state.movies.map(movie => (
-          <Movie key={movie.id} movie={movie} />
-        ))}
+      <div className=" wrapper">
+        <div className="row ">
+          {this.state.movies.map(movie => (
+            <Movie key={movie.id} movie={movie} />
+          ))}
+        </div>
       </div>
     );
   }

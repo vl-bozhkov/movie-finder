@@ -1,4 +1,4 @@
-.jumbotron {
+.app-header {
   background: #2c3e50;
   color: #fff;
 }
@@ -8,4 +8,23 @@
 .header-link:hover {
   color: #fff;
   text-decoration: none;
+}
+
+.release {
+  font-size: 1.3rem;
+}
+
+footer {
+  background: #2c3e50;
+}
+
+.icon-grid:link,
+.icon-grid:hover,
+.icon-grid:visited {
+  color: #fff;
+}
+
+footer .container {
+  display: flex;
+  justify-content: center;
 }
