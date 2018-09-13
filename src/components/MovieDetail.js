@@ -3,7 +3,6 @@ import Genres from './Genres';
 
 // const API_KEY = `${process.env.REACT_APP_API_KEY}`;
 const API_KEY = 'fa12fc1e59ab1b0c6d4f9bd143e6e73b';
-const POSTER_PATH = 'http://image.tmdb.org/t/p/w92';
 const BACKDROP_PATH = 'http://image.tmdb.org/t/p/w1280';
 
 class MovieDetail extends Component {
@@ -37,19 +36,14 @@ class MovieDetail extends Component {
   render() {
     const { movie } = this.state;
     return (
-      <div>
+      <div className="movie-wrapper">
         <img
           className="img-fluid w-100"
           src={`${BACKDROP_PATH}${movie.backdrop_path}`}
           alt={movie.title}
         />
 
-        <div className="media shadow  mt-1 mx-1 p-1">
-          {/* <img
-            className="mr-2 "
-            src={`${POSTER_PATH}${movie.poster_path}`}
-            alt={movie.title}
-          /> */}
+        <div className="media shadow my-1 p-1">
           <div className="media-body">
             <div>
               <h3>
@@ -65,14 +59,14 @@ class MovieDetail extends Component {
               /10
               <span className="d-inline ml-2">{movie.vote_count} votes</span>
             </span>
-            <span class="border-right" />
+            <span className="border-right" />
             <span className="badge badge-light d-inline-block ml-1 mr-1">
               Runtime:
               {movie.runtime} Minutes
             </span>
-            <span class="border-right mr-1" />
+            <span className="border-right mr-1" />
             <Genres genres={movie.genres} />
-            <span class="border-right ml-1" />
+            <span className="border-right ml-1" />
             <span className=" ml-1 badge badge-light d-inline-block ml-1 mr-1">
               {movie.release_date}
               <span className="ml-1 text-uppercase">
@@ -81,17 +75,17 @@ class MovieDetail extends Component {
             </span>
             <span className="border-right" />
 
-            <span class="badge badge-light d-inline-block ml-1 mr-1">
+            <span className="badge badge-light d-inline-block ml-1 mr-1">
               Budget:
               {movie.budget}$
             </span>
 
-            <p className=" text-justify mr-2">{movie.overview}</p>
+            <p className="text-justify">{movie.overview}</p>
 
             <a
               target="_blank"
               href={movie.homepage}
-              class="btn btn-outline-dark d-inline-block mr-1 mt-2 "
+              className="btn btn-outline-dark d-inline-block mr-1 mt-2 "
             >
               <h4>Home Page </h4>
             </a>
@@ -99,7 +93,7 @@ class MovieDetail extends Component {
         </div>
 
         <div className="row">
-          <div className="col-sm-12">
+          <div className="col-12">
             <div className="mt-1 embed-responsive embed-responsive-21by9">
               <iframe
                 title={this.state.movie.title}

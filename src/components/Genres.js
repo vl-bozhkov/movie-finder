@@ -5,7 +5,9 @@ const Genres = props => {
     <React.Fragment>
       {props.genres &&
         props.genres.map(g => (
-          <span className="badge badge-light ">{g.name}</span>
+          <span key={g.id} className="badge badge-light ">
+            {g.name}
+          </span>
         ))}
     </React.Fragment>
   );

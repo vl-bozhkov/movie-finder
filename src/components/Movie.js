@@ -5,7 +5,7 @@ const POSTER_PATH = 'http://image.tmdb.org/t/p/w300';
 
 const Movie = props => {
   return (
-    <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 d-flex align-items-stretch">
+    <div className="col-xl-3  col-lg-3 col-md-4 col-sm-6 col-10 mx-auto d-flex align-items-stretch">
       <div className="card my-2 mx-1 shadow">
         <Link to={`/${props.movie.id}`}>
           <img
@@ -15,7 +15,7 @@ const Movie = props => {
           />
         </Link>
         <div className="card-body">
-          <h5 class="card-title">{props.movie.title}</h5>
+          <h5 className="card-title">{props.movie.title}</h5>
           <p className="card-text">
             {props.movie.overview.substring(0, 100)}
             ...

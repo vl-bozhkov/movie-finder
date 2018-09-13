@@ -28,3 +28,11 @@ footer .container {
   display: flex;
   justify-content: center;
 }
+
+.wrapper {
+  overflow-x: hidden;
+}
+
+.movie-wrapper {
+  overflow-x: hidden;
+}
